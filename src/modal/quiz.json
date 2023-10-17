@@ -1,0 +1,93 @@
+[
+  {
+    "id": 1,
+    "question": "Select the missing number in the given equation.<br />3 + ____ = 12",
+    "questionType": "string",
+    "answerType": "single",
+    "answerData": [
+      {
+        "label": "6",
+        "value": "6",
+        "correct": false
+      },
+      {
+        "label": "5",
+        "value": "5",
+        "correct": false
+      },
+      {
+        "label": "9",
+        "value": "9",
+        "correct": true
+      },
+      {
+        "label": "11",
+        "value": "11",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "question": "Find the distance between (3, 2) and (-4, 1).",
+    "questionType": "string",
+    "answerType": "single",
+    "_answerData": [
+      {
+        "label": "\\(5\\sqrt{2}\\)",
+        "correct": true
+      },
+      {
+        "label": "\\(5\\sqrt{3}\\)",
+        "_correct": false
+      },
+      {
+        "label": "\\(5\\sqrt{5}\\)",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "question": "Add 5 + 6.\n",
+    "answerData": []
+  },
+  {
+    "id": 116602,
+    "_question": "Arrange the given numbers in increasing order.<br />1969, 1903, 1957, 1927</p>",
+    "answerData": [
+      {
+        "answer": "1903",
+        "correct": false
+      },
+      {
+        "answer": "1927",
+        "correct": false
+      },
+      {
+        "answer": "1957",
+        "correct": false
+      },
+      {
+        "answer": "1969",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Match the following figures with number of sides they have.",
+    "answerType": "matrix_sort_answer",
+    "answerData": [
+      {
+        "answer": "Triangle",
+        "_sortString": "3 sides"
+      },
+      {
+        "_answer": "Rectangle "
+      },
+      {
+        "_answer": "Octagon"
+      }
+    ]
+  }
+]
