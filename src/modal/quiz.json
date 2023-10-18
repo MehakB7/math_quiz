@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "question": "Select the missing number in the given equation.<br />3 + ____ = 12",
+    "question": "<p>Select the missing number in the given equation.<br />3 + ____ = 12<p>",
     "questionType": "string",
     "answerType": "single",
     "answerData": [
@@ -29,7 +29,7 @@
   },
   {
     "id": 2,
-    "question": "Find the distance between (3, 2) and (-4, 1).",
+    "question": "<p>Find the distance between (3, 2) and (-4, 1).<p>",
     "questionType": "string",
     "answerType": "single",
     "_answerData": [
@@ -50,11 +50,13 @@
   {
     "id": 3,
     "question": "Add 5 + 6.\n",
+    "answerType": "free_input",
     "answerData": []
   },
   {
     "id": 116602,
-    "_question": "Arrange the given numbers in increasing order.<br />1969, 1903, 1957, 1927</p>",
+    "_question": "Arrange the given numbers in increasing order.1969, 1903, 1957, 1927",
+    "answerType": "sorting",
     "answerData": [
       {
         "answer": "1903",
@@ -75,7 +77,23 @@
     ]
   },
   {
-    "question": "Match the following figures with number of sides they have.",
+    "question": "<p>Write the fraction for the shaded region.<br /><img class=\"size-full wp-image-679058 aligncenter\" src=\"https://nicolethemathlady.com/wp-content/uploads/2023/03/image_2023_02_06T07_45_00_960Z.png\" alt=\"\" width=\"178\" height=\"179\" /></p>\n",
+    "answerType": "matrix_sort_answer",
+    "answerData": [
+      {
+        "answer": "Triangle",
+        "_sortString": "3 sides"
+      },
+      {
+        "_answer": "Rectangle "
+      },
+      {
+        "_answer": "Octagon"
+      }
+    ]
+  },
+  {
+    "question": "<p>Subtract : \\(2\\frac{1}{4} - \\frac{3}{7}\\)</p>\n",
     "answerType": "matrix_sort_answer",
     "answerData": [
       {
