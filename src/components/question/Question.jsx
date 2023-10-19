@@ -2,7 +2,7 @@ import React from "react";
 import DynamicContent from "../dynamicContent/DynamicContent";
 import { bookmarkIcon } from "../../helper/iconPath";
 
-const Question = ({ questionNo, onFlagged, questionDescription }) => {
+const Question = ({ questionNo, questionDescription }) => {
   return (
     <div className="flex flex-col items-start shadow-md ">
       <div className="flex justify-between w-full">
@@ -13,7 +13,7 @@ const Question = ({ questionNo, onFlagged, questionDescription }) => {
           <img
             className=""
             src={bookmarkIcon}
-            onClick={onFlagged}
+            // onClick={onFlagged}
             alt="bookmark"
           />
           <div className="">Flag for later</div>

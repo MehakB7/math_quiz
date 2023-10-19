@@ -32,17 +32,20 @@
     "question": "<p>Find the distance between (3, 2) and (-4, 1).<p>",
     "questionType": "string",
     "answerType": "single",
-    "_answerData": [
+    "answerData": [
       {
         "label": "\\(5\\sqrt{2}\\)",
+        "value": "\\(5\\sqrt{2}\\)",
         "correct": true
       },
       {
         "label": "\\(5\\sqrt{3}\\)",
+        "value": "\\(5\\sqrt{3}\\)",
         "_correct": false
       },
       {
         "label": "\\(5\\sqrt{5}\\)",
+        "value": "\\(5\\sqrt{5}\\)",
         "correct": false
       }
     ]
@@ -77,6 +80,7 @@
     ]
   },
   {
+    "id": 5,
     "question": "<p>Write the fraction for the shaded region.<br /><img class=\"size-full wp-image-679058 aligncenter\" src=\"https://nicolethemathlady.com/wp-content/uploads/2023/03/image_2023_02_06T07_45_00_960Z.png\" alt=\"\" width=\"178\" height=\"179\" /></p>\n",
     "answerType": "matrix_sort_answer",
     "answerData": [
@@ -93,6 +97,7 @@
     ]
   },
   {
+    "id": 6,
     "question": "<p>Subtract : \\(2\\frac{1}{4} - \\frac{3}{7}\\)</p>\n",
     "answerType": "matrix_sort_answer",
     "answerData": [
@@ -105,6 +110,33 @@
       },
       {
         "_answer": "Octagon"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "question": "<p>Which of the following alphabets are in capital letters? <br/>A F c r</p>",
+    "answerType": "multiple",
+    "answerData": [
+      {
+        "answer": "A",
+        "label": "A",
+        "correct": true
+      },
+      {
+        "answer": "c",
+        "label": "c",
+        "correct": false
+      },
+      {
+        "answer": "F",
+        "label": "F",
+        "correct": true
+      },
+      {
+        "answer": "r",
+        "label": "r",
+        "correct": false
       }
     ]
   }

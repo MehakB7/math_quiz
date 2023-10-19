@@ -22,6 +22,4 @@ const RadioGroup = ({ onChange, selectedValue, options }) => {
   );
 };
 
-RadioGroup.propTypes = {};
-
 export default RadioGroup;
