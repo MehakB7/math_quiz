@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import RadioGroup from "../radiogroup/RadioGroup";
 import { updateAnswer } from "../../slice/question";
 import CheckboxGroup from "../checkboxGroup/CheckboxGroup";
+import SortableList from "../sortableList/ListItem";
+import MatrixDragAndDrop from "../matrixSort/MatrixSort";
 
 const Answer = ({ id, type, answerData }) => {
   const questions = useSelector((state) => state.questions);
@@ -19,9 +21,23 @@ const Answer = ({ id, type, answerData }) => {
   };
 
   const onMultiChange = (e) => {
+    if (question.answer.includes(e.target.value)) {
+      dispatch(
+        updateAnswer({
+          id: id,
+          answer: question.answer.filter((item) => item !== e.target.value),
+        })
+      );
+      return;
+    }
+    console.log("inside this on multi change");
     dispatch(
       updateAnswer({ id: id, answer: [...question.answer, e.target.value] })
     );
+  };
+
+  const onDragEnd = (ans) => {
+    dispatch(updateAnswer({ id: id, answer: ans }));
   };
 
   const getComponent = () => {
@@ -44,6 +60,21 @@ const Answer = ({ id, type, answerData }) => {
               onChange={onMultiChange}
             />
           </>
+        );
+      case "sort":
+        return (
+          <>
+            <SortableList items={question.answer} onEnd={onDragEnd} />
+          </>
+        );
+
+      case "matrix_sort":
+        return (
+          <MatrixDragAndDrop
+            droppableItems={question.answer}
+            onEnd={onDragEnd}
+            fixedItems={answerData.map((item) => item.left)}
+          />
         );
 
       default:

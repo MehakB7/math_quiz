@@ -21,13 +21,16 @@ function App() {
       }
     }
 
-    const getAnswer = (type) => {
-
+    const getAnswer = (type, answerData) => {
       switch (type) {
         case "multiple":
           return [];
         case "sort":
-          return [];
+          return answerData.map(item => ({ id: `item-${item.answer}`, content: item.answer }));
+
+        case "matrix_sort":
+          return answerData.map(item => ({ id: `item-${item.right}`, content: item.right }));
+
         default:
           return "";
       }
@@ -37,7 +40,7 @@ function App() {
     dispatch(populateInitialState(quiz.map(item => (
       {
         questionID: item.id,
-        answer: getAnswer(item.answerType),
+        answer: getAnswer(item.answerType, item.answerData),
         attempts: getAttempts(item.answerType, item.answerData),
         flagged: false
       }

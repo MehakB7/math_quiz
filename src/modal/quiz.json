@@ -58,58 +58,40 @@
   },
   {
     "id": 116602,
-    "_question": "Arrange the given numbers in increasing order.1969, 1903, 1957, 1927",
-    "answerType": "sorting",
+    "_question": "<p>Arrange the given numbers in increasing order.1969, 1903, 1957, 1927<p>",
+    "answerType": "sort",
     "answerData": [
       {
-        "answer": "1903",
-        "correct": false
+        "answer": "1903"
       },
       {
-        "answer": "1927",
-        "correct": false
+        "answer": "1927"
       },
       {
-        "answer": "1957",
-        "correct": false
+        "answer": "1957"
       },
       {
-        "answer": "1969",
-        "correct": false
+        "answer": "1969"
       }
     ]
   },
-  {
-    "id": 5,
-    "question": "<p>Write the fraction for the shaded region.<br /><img class=\"size-full wp-image-679058 aligncenter\" src=\"https://nicolethemathlady.com/wp-content/uploads/2023/03/image_2023_02_06T07_45_00_960Z.png\" alt=\"\" width=\"178\" height=\"179\" /></p>\n",
-    "answerType": "matrix_sort_answer",
-    "answerData": [
-      {
-        "answer": "Triangle",
-        "_sortString": "3 sides"
-      },
-      {
-        "_answer": "Rectangle "
-      },
-      {
-        "_answer": "Octagon"
-      }
-    ]
-  },
+
   {
     "id": 6,
-    "question": "<p>Subtract : \\(2\\frac{1}{4} - \\frac{3}{7}\\)</p>\n",
-    "answerType": "matrix_sort_answer",
+    "question": "<pMatch the following figures with number of sides they have.\n",
+    "answerType": "matrix_sort",
     "answerData": [
       {
-        "answer": "Triangle",
-        "_sortString": "3 sides"
+        "left": "Triangle",
+        "right": "3 Sides"
       },
       {
-        "_answer": "Rectangle "
+        "left": "Rectangle",
+        "right": "4 Sides"
       },
       {
-        "_answer": "Octagon"
+        "left": "Octagon",
+        "right": "8 Sides"
       }
     ]
   },
@@ -119,22 +101,22 @@
     "answerType": "multiple",
     "answerData": [
       {
-        "answer": "A",
+        "value": "A",
         "label": "A",
         "correct": true
       },
       {
-        "answer": "c",
+        "value": "c",
         "label": "c",
         "correct": false
       },
       {
-        "answer": "F",
+        "value": "F",
         "label": "F",
         "correct": true
       },
       {
-        "answer": "r",
+        "value": "r",
         "label": "r",
         "correct": false
       }
