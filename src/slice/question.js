@@ -34,10 +34,20 @@ const questionsSlice = createSlice({
             state = action.payload;
             return state;
 
+        },
+
+
+        updateStatus: (state, action) => {
+            const { id, status } = action.payload;
+            const questionIndex = state.findIndex((question) => question.questionID === id);
+            if (questionIndex !== -1) {
+                state[questionIndex].id = status;
+            }
+
         }
     },
 });
 
-export const { updateAttempts, updateFlag, updateAnswer, populateInitialState } = questionsSlice.actions;
+export const { updateAttempts, updateFlag, updateAnswer, populateInitialState, updateStatus } = questionsSlice.actions;
 
 export default questionsSlice.reducer;

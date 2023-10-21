@@ -1,15 +1,14 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import RadioGroup from "../radiogroup/RadioGroup";
 import { updateAnswer } from "../../slice/question";
 import CheckboxGroup from "../checkboxGroup/CheckboxGroup";
 import SortableList from "../sortableList/ListItem";
 import MatrixDragAndDrop from "../matrixSort/MatrixSort";
 
-const Answer = ({ id, type, answerData }) => {
-  const questions = useSelector((state) => state.questions);
-  const question = questions?.find((item) => item.questionID === id);
+import DynamicText from "../dynamicText/DynamicText";
 
+const Answer = ({ id, type, answerData, question }) => {
   const dispatch = useDispatch();
 
   if (!question) {
@@ -30,7 +29,7 @@ const Answer = ({ id, type, answerData }) => {
       );
       return;
     }
-    console.log("inside this on multi change");
+
     dispatch(
       updateAnswer({ id: id, answer: [...question.answer, e.target.value] })
     );
@@ -38,6 +37,13 @@ const Answer = ({ id, type, answerData }) => {
 
   const onDragEnd = (ans) => {
     dispatch(updateAnswer({ id: id, answer: ans }));
+  };
+
+  const onClozeChange = (e) => {
+    const answer = [...question.answer];
+    answer[e.target.name] = e.target.value;
+
+    dispatch(updateAnswer({ id: id, answer: answer }));
   };
 
   const getComponent = () => {
@@ -77,12 +83,25 @@ const Answer = ({ id, type, answerData }) => {
           />
         );
 
+      case "cloze":
+        console.log("inside this on multi change", question);
+
+        return (
+          <DynamicText
+            text={"{2}+3={5}+{5}"}
+            answer={question.answer}
+            onClozeChange={onClozeChange}
+          />
+        );
+
       default:
         return <p>Free</p>;
     }
   };
 
-  return <div>{getComponent()}</div>;
+  return (
+    <div className="flex flex-col gap-3 items-start">{getComponent()}</div>
+  );
 };
 
 Answer.propTypes = {};

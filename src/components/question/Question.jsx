@@ -1,24 +1,44 @@
 import React from "react";
 import DynamicContent from "../dynamicContent/DynamicContent";
 import { bookmarkIcon } from "../../helper/iconPath";
+import { useDispatch, useSelector } from "react-redux";
+import { updateFlag } from "../../slice/question";
 
-const Question = ({ questionNo, questionDescription }) => {
+const Question = ({ questionNo, questionDescription, id }) => {
+  const questions = useSelector((state) => state.questions);
+  const question = questions?.find((item) => item.questionID === id);
+
+  const dispacth = useDispatch();
+
+  if (questions.length === 0) {
+    return null;
+  }
+
+  const onClick = (e) => {
+    dispacth(updateFlag({ id: id, flagged: !question.flagged }));
+  };
+
   return (
-    <div className="flex flex-col items-start shadow-md ">
-      <div className="flex justify-between w-full">
-        <div className="text-2xl font-bold grow text-left  ">
+    <div className="flex-1 flex-col items-start">
+      <div className="flex justify-between mb-4">
+        <div className="text-2xl font-bold text-left">
           Question {questionNo}
         </div>
-        <div className="flex">
-          <img
-            className=""
-            src={bookmarkIcon}
-            // onClick={onFlagged}
-            alt="bookmark"
-          />
-          <div className="">Flag for later</div>
+        <div className="flex items-center">
+          <div className="mr-2" style={{ minWidth: "24px" }}>
+            <img
+              className=""
+              src={bookmarkIcon}
+              onClick={onClick}
+              alt="bookmark"
+            />
+          </div>
+          <div className="">
+            {question.flagged ? "Flagged" : "Flagged for Later"}
+          </div>
         </div>
       </div>
+
       <div className="flex flex-col items-start">
         <DynamicContent text={questionDescription} />
       </div>

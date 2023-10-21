@@ -57,6 +57,12 @@
     "answerData": []
   },
   {
+    "id": 4,
+    "queson": "<p>There were 5 students in the first row and 7 students in the second row.How many students were in the first two rows?<.p>",
+    "answerType": "cloze",
+    "answerData": ["{12} students"]
+  },
+  {
     "id": 116602,
     "_question": "<p>Arrange the given numbers in increasing order.1969, 1903, 1957, 1927<p>",
     "answerType": "sort",
