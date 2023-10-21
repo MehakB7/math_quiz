@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Answer from "../components/answer/Answer";
 import Question from "../components/question/Question";
 import { Modal } from "../components/modal/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import { updateAttempts, updateStatus } from "../slice/question";
 import { ModalContent } from "../helper/constant";
+import SoundPlayer from "../components/soundPlayer/SoundPlayer";
 
 const Main = ({ quiz, selectedQuestion }) => {
   const index = quiz.findIndex((item) => item.id === selectedQuestion);
@@ -18,6 +19,8 @@ const Main = ({ quiz, selectedQuestion }) => {
 
   const dispatch = useDispatch();
 
+  const audioRef = useRef();
+
   if (index === -1) {
     return null;
   }
@@ -30,6 +33,7 @@ const Main = ({ quiz, selectedQuestion }) => {
   const onCorrect = () => {
     setModalContent(ModalContent.Passed);
     dispatch(updateStatus({ id: selectedQuestion, status: "passed" }));
+    audioRef.current.playCorrectSound();
   };
 
   const onWrong = () => {
@@ -40,11 +44,13 @@ const Main = ({ quiz, selectedQuestion }) => {
         attempts: question.attempts - 1,
       })
     );
+    audioRef.current.playWrongSound();
   };
 
   const onCheck = () => {
-    switch (quizQuestion.type) {
+    switch (quizQuestion.answerType) {
       case "single":
+        console.log("hehre", question.answer);
         if (!question.answer) {
           setModalContent(ModalContent.Empty);
         } else {
@@ -53,6 +59,17 @@ const Main = ({ quiz, selectedQuestion }) => {
           );
           answer.correct ? onCorrect() : onWrong();
         }
+
+      case "multiple":
+        // if (question.answer.length === 0) {
+        //   setModalContent(ModalContent.Empty);
+        // } else {
+        //   const answer = quizQuestion.answerData.filter(
+        //     (item) => item.value === question.answer
+        //   );
+
+         
+        
 
       default:
     }
@@ -71,6 +88,7 @@ const Main = ({ quiz, selectedQuestion }) => {
           id={quizQuestion.id}
           answerData={quizQuestion.answerData}
           type={quizQuestion.answerType}
+          question={question}
         />
         <button
           className="bg-blue-600 border-blue-600 text-white px-4 py-2 rounded-md"
@@ -85,6 +103,7 @@ const Main = ({ quiz, selectedQuestion }) => {
         closeModal={closeModal}
         content={modalContent}
       />
+      <SoundPlayer ref={audioRef} />
     </div>
   );
 };
