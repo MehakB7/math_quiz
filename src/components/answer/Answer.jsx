@@ -7,6 +7,7 @@ import SortableList from "../sortableList/ListItem";
 import MatrixDragAndDrop from "../matrixSort/MatrixSort";
 
 import DynamicText from "../dynamicText/DynamicText";
+import FreeInput from "../freeInput/FreeInput";
 
 const Answer = ({ id, type, answerData, question }) => {
   const dispatch = useDispatch();
@@ -88,14 +89,14 @@ const Answer = ({ id, type, answerData, question }) => {
 
         return (
           <DynamicText
-            text={"{2}+3={5}+{5}"}
+            text={answerData[0]}
             answer={question.answer}
             onClozeChange={onClozeChange}
           />
         );
 
       default:
-        return <p>Free</p>;
+        return <FreeInput answer={question.answer} onInputChange={onChange} />;
     }
   };
 

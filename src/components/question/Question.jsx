@@ -1,6 +1,6 @@
 import React from "react";
 import DynamicContent from "../dynamicContent/DynamicContent";
-import { bookmarkIcon } from "../../helper/iconPath";
+import { bookmarkIcon, selectedBookmark } from "../../helper/iconPath";
 import { useDispatch, useSelector } from "react-redux";
 import { updateFlag } from "../../slice/question";
 
@@ -24,16 +24,15 @@ const Question = ({ questionNo, questionDescription, id }) => {
         <div className="text-2xl font-bold text-left">
           Question {questionNo}
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center w-36">
           <div className="mr-2" style={{ minWidth: "24px" }}>
             <img
-              className=""
-              src={bookmarkIcon}
+              src={!question.flagged ? bookmarkIcon : selectedBookmark}
               onClick={onClick}
               alt="bookmark"
             />
           </div>
-          <div className="">
+          <div className="text-sm text-gray-500">
             {question.flagged ? "Flagged" : "Flagged for Later"}
           </div>
         </div>

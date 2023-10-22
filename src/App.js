@@ -1,13 +1,11 @@
 import './App.css';
 import quiz from "./modal/quiz.json"
-
-import Question from './components/question/Question';
-import Answer from './components/answer/Answer';
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { populateInitialState } from './slice/question';
 import Main from './layouts/Main';
 import Sidebar from './layouts/Sidebar';
+import { QuestionStatus } from './helper/constant';
 
 function App() {
 
@@ -18,10 +16,11 @@ function App() {
 
   useEffect(() => {
     const getAttempts = (type, answerData) => {
-      if (type !== "free") {
+      if (type !== "free" && type !== "cloze") {
         return answerData.length - 1;
       } else {
-        return Math.random() * 10;
+        return Math.floor(Math.random()) + 3
+
       }
     }
 
@@ -36,7 +35,7 @@ function App() {
           return answerData.map(item => ({ id: `item-${item.right}`, content: item.right }));
 
         case "cloze":
-          console.log("inside cloze")
+
           return [];
 
         default:
@@ -49,7 +48,8 @@ function App() {
         questionID: item.id,
         answer: getAnswer(item.answerType, item.answerData),
         attempts: getAttempts(item.answerType, item.answerData),
-        flagged: false
+        flagged: false,
+        status: QuestionStatus.NotAttempted
       }
 
     ))))
@@ -68,7 +68,7 @@ function App() {
 
     <div className="flex h-screen">
       <Sidebar quiz={quiz} onSelect={setSelectedQuestion} selectedQuestion={selectedQuestion} />
-      <Main quiz={quiz} selectedQuestion={selectedQuestion} />
+      <Main quiz={quiz} selectedQuestion={selectedQuestion} setSelectedQuestion={setSelectedQuestion} />
 
     </div>
   );

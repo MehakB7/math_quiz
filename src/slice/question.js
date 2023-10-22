@@ -7,15 +7,15 @@ const questionsSlice = createSlice({
     initialState: [],
     reducers: {
         updateAttempts: (state, action) => {
-            const { questionID, attempts } = action.payload;
-            const questionIndex = state.findIndex((question) => question.questionID === questionID);
+            const { id, attempts } = action.payload;
+            const questionIndex = state.findIndex((question) => question.questionID === id);
             if (questionIndex !== -1) {
                 state[questionIndex].attempts = attempts;
             }
         },
         updateFlag: (state, action) => {
-            const { questionID, flagged } = action.payload;
-            const questionIndex = state.findIndex((question) => question.questionID === questionID);
+            const { id, flagged } = action.payload;
+            const questionIndex = state.findIndex((question) => question.questionID === id);
             if (questionIndex !== -1) {
                 state[questionIndex].flagged = flagged;
             }
@@ -41,7 +41,7 @@ const questionsSlice = createSlice({
             const { id, status } = action.payload;
             const questionIndex = state.findIndex((question) => question.questionID === id);
             if (questionIndex !== -1) {
-                state[questionIndex].id = status;
+                state[questionIndex].status = status;
             }
 
         }

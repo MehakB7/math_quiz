@@ -13,13 +13,12 @@ export const Modal = ({ showModal, closeModal, content }) => {
     }
   };
 
-  console.log("content is", content);
   useEffect(() => {
     let timeout;
     if (showModal) {
       timeout = setTimeout(() => {
         closeModal();
-      }, 5000);
+      }, 1000);
     }
     return () => {
       clearTimeout(timeout);
