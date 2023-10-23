@@ -34,15 +34,17 @@ const QuestionButton = ({ questionNo, onClick, id, selectedQuestion }) => {
 
   return (
     <button
-      className={`flex items-center space-x-2  border-solid border-2 rounded-md p-1 ${
+      className={`flex items-center space-x-2  border-solid border-2 rounded-md p-1 justify-between ${
         selectedQuestion === id ? "border-blue-500" : "border-gray-200"
       }`}
       onClick={(e) => {
         onClick(id);
       }}
     >
-      {<img src={getButton()} alt="icon" />}
-      <span className="font-semibold">{questionNo}</span>
+      <div className="flex items-center  justify-between">
+        {<img src={getButton()} alt="icon" className="w-4" />}
+        <span className="font-semibold ml-2">{questionNo}</span>
+      </div>
       {question.flagged && <img src={selectedBookmark} alt="bookmark" />}
     </button>
   );

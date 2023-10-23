@@ -17,14 +17,12 @@ const Main = ({ quiz, selectedQuestion, setSelectedQuestion }) => {
   const index = quiz.findIndex((item) => item.id === selectedQuestion);
   const [showModal, setShow] = useState(false);
   const [modalContent, setModalContent] = useState("");
-
   const questions = useSelector((state) => state.questions);
   const question = questions?.find(
     (item) => item.questionID === selectedQuestion
   );
 
   const dispatch = useDispatch();
-
   const audioRef = useRef();
 
   if (index === -1) {
@@ -71,6 +69,7 @@ const Main = ({ quiz, selectedQuestion, setSelectedQuestion }) => {
           );
           answer.correct ? onCorrect() : onWrong();
         }
+
         break;
 
       case "multiple":
@@ -83,7 +82,8 @@ const Main = ({ quiz, selectedQuestion, setSelectedQuestion }) => {
           const totalCorrect = quizQuestion.answerData.filter(
             (item) => item.correct
           );
-          totalCorrect === answer.correct ? onCorrect() : onWrong();
+
+          totalCorrect.length === answer.length ? onCorrect() : onWrong();
         }
         break;
 

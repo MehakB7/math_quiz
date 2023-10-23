@@ -9,6 +9,12 @@ const Sidebar = ({ quiz, onSelect, selectedQuestion }) => {
 
   return (
     <div className="w-1/5">
+      <div className="flex justify-between m-4 items-center  text-gray-600">
+        <span> Questions </span>
+        <span className="bg-gray-100 rounded-md text-xs font-semibold p-2">
+          {quiz.length} questions
+        </span>
+      </div>
       <div className="grid grid-cols-3 gap-3 p-2">
         {quiz.map((item, index) => (
           <QuestionButton
