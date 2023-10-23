@@ -15,6 +15,7 @@ const DynamicText = ({ text, answer, onClozeChange }) => {
               type="text"
               value={value}
               name={PIndex++}
+              autoComplete="off"
               onChange={(e) => onClozeChange(e)}
             />
           );

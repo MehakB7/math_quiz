@@ -94,7 +94,7 @@ const Answer = ({ id, type, answerData, question }) => {
         );
 
       default:
-        return <FreeInput answer={question.answer} onInputChange={onChange} />;
+        return <FreeInput value={question.answer} onInputChange={onChange} />;
     }
   };
 

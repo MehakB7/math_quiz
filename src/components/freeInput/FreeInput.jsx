@@ -6,6 +6,7 @@ const FreeInput = ({ value, onInputChange }) => {
       className="p-2 border-2 border-gray-400"
       type="text"
       value={value}
+      autoComplete="off"
       onChange={(e) => onInputChange(e)}
     />
   );
