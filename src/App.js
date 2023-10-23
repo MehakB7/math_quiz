@@ -66,7 +66,7 @@ function App() {
 
   return (
 
-    <div className="flex h-screen">
+    <div className="flex h-screen flex-wrap ">
       <Sidebar quiz={quiz} onSelect={setSelectedQuestion} selectedQuestion={selectedQuestion} />
       <Main quiz={quiz} selectedQuestion={selectedQuestion} setSelectedQuestion={setSelectedQuestion} />
 
