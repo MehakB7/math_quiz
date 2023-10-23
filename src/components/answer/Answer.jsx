@@ -85,8 +85,6 @@ const Answer = ({ id, type, answerData, question }) => {
         );
 
       case "cloze":
-        console.log("inside this on multi change", question);
-
         return (
           <DynamicText
             text={answerData[0]}

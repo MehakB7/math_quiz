@@ -22,7 +22,6 @@ const questionsSlice = createSlice({
         },
         updateAnswer: (state, action) => {
             const { id, answer } = action.payload;
-            console.log("inside this ", answer);
             const questionIndex = state.findIndex((question) => question.questionID === id);
             if (questionIndex !== -1) {
                 state[questionIndex].answer = answer;

@@ -34,8 +34,8 @@ const QuestionButton = ({ questionNo, onClick, id, selectedQuestion }) => {
 
   return (
     <button
-      className={`flex items-center space-x-2 border-gray-200 border-solid border-2 rounded-md p-1 ${
-        selectedQuestion === id ? "border-blue-500" : ""
+      className={`flex items-center space-x-2  border-solid border-2 rounded-md p-1 ${
+        selectedQuestion === id ? "border-blue-500" : "border-gray-200"
       }`}
       onClick={(e) => {
         onClick(id);

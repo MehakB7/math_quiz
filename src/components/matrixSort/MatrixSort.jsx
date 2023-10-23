@@ -46,8 +46,6 @@ const MatrixSort = ({ fixedItems, droppableItems, onEnd }) => {
     onEnd(reorderedItems);
   };
 
-  console.log("inside this here", fixedItems, droppableItems);
-
   return (
     <DndProvider backend={HTML5Backend}>
       <div className="grid grid-cols-2 gap-4">

@@ -54,7 +54,7 @@
     "id": 3,
     "question": "Add 5 + 6.\n",
     "answerType": "free",
-    "answerData": [11, "eleven", 11.0]
+    "answerData": ["11", "eleven", "11.0"]
   },
   {
     "id": 4,

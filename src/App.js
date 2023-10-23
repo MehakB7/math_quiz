@@ -6,6 +6,7 @@ import { populateInitialState } from './slice/question';
 import Main from './layouts/Main';
 import Sidebar from './layouts/Sidebar';
 import { QuestionStatus } from './helper/constant';
+import { shuffleArray } from './helper/utils';
 
 function App() {
 
@@ -19,7 +20,7 @@ function App() {
       if (type !== "free" && type !== "cloze") {
         return answerData.length - 1;
       } else {
-        return Math.floor(Math.random()) + 3
+        return 3;
 
       }
     }
@@ -29,13 +30,12 @@ function App() {
         case "multiple":
           return [];
         case "sort":
-          return answerData.map(item => ({ id: `item-${item.answer}`, content: item.answer }));
+          return shuffleArray(answerData.map(item => ({ id: `item-${item.answer}`, content: item.answer })));
 
         case "matrix_sort":
-          return answerData.map(item => ({ id: `item-${item.right}`, content: item.right }));
+          return shuffleArray(answerData.map(item => ({ id: `item-${item.right}`, content: item.right })));
 
         case "cloze":
-
           return [];
 
         default:

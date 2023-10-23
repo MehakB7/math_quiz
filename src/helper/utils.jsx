@@ -4,6 +4,7 @@ export const shuffleArray = (array) => {
 
     [array[i], array[j]] = [array[j], array[i]];
   }
+  return array;
 };
 
 export const haveSameOrder = (arr1, arr2, name1, name2) => {
@@ -51,4 +52,9 @@ export const compareValues = (arr1, arr2) => {
     }
   }
   return true;
+};
+
+export const isPresent = (arr1, value) => {
+  const item = arr1.find((item) => item.toString() === value);
+  return item;
 };

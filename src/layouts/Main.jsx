@@ -10,6 +10,7 @@ import {
   compareValues,
   extractValuesInBraces,
   haveSameOrder,
+  isPresent,
 } from "../helper/utils";
 
 const Main = ({ quiz, selectedQuestion, setSelectedQuestion }) => {
@@ -114,7 +115,7 @@ const Main = ({ quiz, selectedQuestion, setSelectedQuestion }) => {
         break;
 
       case "free":
-        compareValues(quizQuestion.answerData[0], question.answer)
+        isPresent(quizQuestion.answerData, question.answer)
           ? onCorrect()
           : onWrong();
         break;
