@@ -8,7 +8,7 @@ const Sidebar = ({ quiz, onSelect, selectedQuestion }) => {
   };
 
   return (
-    <div className="w-1/5">
+    <div className="md:w-1/5 w-full">
       <div className="flex justify-between m-4 items-center  text-gray-600">
         <span> Questions </span>
         <span className="bg-gray-100 rounded-md text-xs font-semibold p-2">
