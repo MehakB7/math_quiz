@@ -127,5 +127,39 @@
         "correct": false
       }
     ]
+  },
+  {
+    "id": 8,
+    "question": " <p>What is the highest common factor of the numbers 30 and 132</p>",
+    "answerType": "free",
+    "answerData": ["6", "six", "6.0"]
+  },
+  {
+    "id": 9,
+    "question": "<p>What is the sum of 130+125+191",
+    "questionType": "string",
+    "answerType": "single",
+    "answerData": [
+      {
+        "label": "426",
+        "value": "426",
+        "correct": false
+      },
+      {
+        "label": "456",
+        "value": "456",
+        "correct": false
+      },
+      {
+        "label": "446",
+        "value": "446",
+        "correct": true
+      },
+      {
+        "label": "423",
+        "value": "423",
+        "correct": false
+      }
+    ]
   }
 ]
